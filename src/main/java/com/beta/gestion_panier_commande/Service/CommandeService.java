@@ -4,12 +4,16 @@ import com.beta.gestion_panier_commande.Model.Commande;
 import com.beta.gestion_panier_commande.Repository.CommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import javax.persistence.EntityManager;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CommandeService {
+
+
     @Autowired
     private CommandeRepository commandeRepository;
 
@@ -38,4 +42,18 @@ public class CommandeService {
     public void deleteCommande(Long id) {
         commandeRepository.deleteById(id);
     }
+
+    // Services avancées
+
+    public List<Commande> getCommandesByAdressmail(String adressmail) {
+        return commandeRepository.findByAdressmail(adressmail);
+    }
+
+
+    public List<Commande> getCommandesByModePaiment(String modePaiment) {
+        return commandeRepository.findByModePaiment(modePaiment);
+    }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.beta.gestion_panier_commande.Controller;
 
 import com.beta.gestion_panier_commande.Model.Commande;
+import com.beta.gestion_panier_commande.Repository.CommandeRepository;
 import com.beta.gestion_panier_commande.Service.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,8 @@ import java.util.Optional;
 public class CommandeController {
     @Autowired
     private CommandeService commandeService;
+
+
 
     @GetMapping
     public ResponseEntity<List<Commande>> getAllCommandes() {
@@ -54,4 +57,34 @@ public class CommandeController {
         commandeService.deleteCommande(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
+    // Services avancées
+
+    // Search Commande By Email
+    //  Test Example : http://localhost:8080/commandes?email=johndoe@example.com
+    @GetMapping(params = "email")
+    public ResponseEntity<List<Commande>> getCommandesByAdressmail(@RequestParam String email) {
+        List<Commande> commandes = commandeService.getCommandesByAdressmail(email);
+        if (commandes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(commandes, HttpStatus.OK);
+        }
+    }
+
+    // Search By Payement Methode Function
+    // Test Link : http://localhost:8080/commandes?mode_paiment=credit card
+    @GetMapping(params = "mode_paiment")
+    public ResponseEntity<List<Commande>> getCommandesByModePaiment(@RequestParam String mode_paiment) {
+        List<Commande> commandes = commandeService.getCommandesByModePaiment(mode_paiment);
+        if (commandes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(commandes, HttpStatus.OK);
+        }
+    }
+
+
+
 }
