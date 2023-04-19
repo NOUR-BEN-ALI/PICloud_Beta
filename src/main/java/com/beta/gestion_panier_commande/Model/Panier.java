@@ -1,7 +1,7 @@
 package com.beta.gestion_panier_commande.Model;
 
 import javax.persistence.*;
-
+import java.util.List;
 
 
 @Entity
@@ -26,6 +26,8 @@ public class Panier {
     private Integer prix_product;
     @Column(name = "Cin")
     private Integer Cin ;
+
+
 
     public Panier() {
     }

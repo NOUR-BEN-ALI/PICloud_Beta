@@ -1,6 +1,7 @@
 package com.beta.gestion_panier_commande.Controller;
 
 import com.beta.gestion_panier_commande.Model.Commande;
+import com.beta.gestion_panier_commande.Model.Panier;
 import com.beta.gestion_panier_commande.Repository.CommandeRepository;
 import com.beta.gestion_panier_commande.Service.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,10 @@ public class CommandeController {
         commandeService.deleteCommande(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
+
+
 
 
     // Services avancées

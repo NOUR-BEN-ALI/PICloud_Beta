@@ -25,8 +25,8 @@ import java.util.Map;
 
 public class PaymentController {
 
-    @Autowired
-    PayPalService service;
+@Autowired
+    private PayPalService service;
 
     public static final String SUCCESS_URL = "pay/success";
     public static final String CANCEL_URL = "pay/cancel";
@@ -36,6 +36,7 @@ public class PaymentController {
         return "home";
     }
 
+/*
     @PostMapping("/pay")
     public String payment(@ModelAttribute("order") Order order) {
         try {
@@ -72,8 +73,23 @@ public class PaymentController {
         return "redirect:/";
     }
 
+    */
+
+/*
+JSON :
 
 
+{
+  "order": {
+    "price": 10.99,
+    "currency": "USD",
+    "description": "Example Order",
+    "stripeToken": "tok_visa"
+  }
+}
+
+
+ */
     @PostMapping("/pay2")
     public String payment(@ModelAttribute("order") Order order, Model model) {
         Stripe.apiKey = "sk_test_YourTestSecretKey";

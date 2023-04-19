@@ -1,10 +1,13 @@
 package com.beta.gestion_panier_commande.Controller;
 
+import com.beta.gestion_panier_commande.Model.Commande;
 import com.beta.gestion_panier_commande.Model.Panier;
 import com.beta.gestion_panier_commande.Service.PanierService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,4 +59,28 @@ public class PanierController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
+    // http://localhost:9091/paniers/getAllOrderedByTotalPanierASC
+
+
+    @GetMapping("/getAllOrderedByTotalPanierASC")
+    List<Panier> getAllOrderedByTotalPanierASC(){
+        return panierService.getAllOrderedByTotalPanierASC();
+    }
+
+
+
+    @GetMapping(params = "ref_product")
+    public ResponseEntity<List<Panier>> getTotalPanierByProductRef(@RequestParam String ref_product) {
+        List<Panier> paniers = panierService.findReferenceByTotalPanier(ref_product);
+        if (paniers.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(paniers, HttpStatus.OK);
+        }
+    }
+
+
+
 }

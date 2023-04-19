@@ -1,6 +1,8 @@
 package com.beta.gestion_panier_commande.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -29,6 +31,8 @@ public class Commande {
 
     @Column(name = "mode_paiment")
     private String mode_paiment ;
+
+
 
     public Commande() {
     }
