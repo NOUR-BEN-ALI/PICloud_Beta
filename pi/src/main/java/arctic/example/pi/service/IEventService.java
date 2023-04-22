@@ -1,7 +1,9 @@
-package tn.esprit.picloudbeta.service;
+package arctic.example.pi.service;
 
-import tn.esprit.picloudbeta.entity.Evenement;
 
+
+
+import arctic.example.pi.entity.Evenement;
 
 import java.util.List;
 

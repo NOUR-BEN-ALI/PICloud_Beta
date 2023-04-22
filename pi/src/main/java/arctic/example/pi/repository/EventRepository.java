@@ -1,8 +1,9 @@
-package tn.esprit.picloudbeta.repository;
+package arctic.example.pi.repository;
 
+import arctic.example.pi.entity.Evenement;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import tn.esprit.picloudbeta.entity.Evenement;
+
 
 @Repository
 public interface EventRepository extends CrudRepository<Evenement,Long> {

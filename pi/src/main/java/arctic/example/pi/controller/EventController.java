@@ -1,9 +1,10 @@
-package tn.esprit.picloudbeta.controller;
+package arctic.example.pi.controller;
 
+import arctic.example.pi.entity.Evenement;
+import arctic.example.pi.service.IEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.esprit.picloudbeta.entity.Evenement;
-import tn.esprit.picloudbeta.service.IEventService;
+
 
 import java.util.List;
 

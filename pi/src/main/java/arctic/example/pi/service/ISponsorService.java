@@ -1,8 +1,10 @@
-package tn.esprit.picloudbeta.service;
+package arctic.example.pi.service;
 
 
-import tn.esprit.picloudbeta.entity.Sponsor;
 
+
+
+import arctic.example.pi.entity.Sponsor;
 
 import java.util.List;
 

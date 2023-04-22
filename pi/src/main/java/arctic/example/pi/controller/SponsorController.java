@@ -1,13 +1,11 @@
-package tn.esprit.picloudbeta.controller;
+package arctic.example.pi.controller;
 
 
+import arctic.example.pi.entity.Sponsor;
+import arctic.example.pi.service.ISponsorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import tn.esprit.picloudbeta.entity.Evenement;
-
-import tn.esprit.picloudbeta.entity.Sponsor;
-import tn.esprit.picloudbeta.service.ISponsorService;
 
 import java.util.List;
 

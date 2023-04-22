@@ -1,8 +1,9 @@
-package tn.esprit.picloudbeta.repository;
+package arctic.example.pi.repository;
 
+import arctic.example.pi.entity.Sponsor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import tn.esprit.picloudbeta.entity.Sponsor;
+
 
 @Repository
 public interface SponsorRepository extends CrudRepository<Sponsor,Long> {

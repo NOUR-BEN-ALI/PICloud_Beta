@@ -1,11 +1,10 @@
-package tn.esprit.picloudbeta.service.Implementation;
+package arctic.example.pi.service;
 
+import arctic.example.pi.entity.Sponsor;
+import arctic.example.pi.repository.SponsorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tn.esprit.picloudbeta.entity.Evenement;
-import tn.esprit.picloudbeta.entity.Sponsor;
-import tn.esprit.picloudbeta.repository.SponsorRepository;
-import tn.esprit.picloudbeta.service.ISponsorService;
+
 
 import java.util.List;
 

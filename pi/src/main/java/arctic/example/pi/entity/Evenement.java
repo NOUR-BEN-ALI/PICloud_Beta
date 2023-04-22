@@ -1,6 +1,10 @@
-package tn.esprit.picloudbeta.entity;
+package arctic.example.pi.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 import javax.persistence.*;
@@ -9,6 +13,10 @@ import java.sql.Date;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Evenement {
 
     @Id
@@ -22,60 +30,14 @@ public class Evenement {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dateFin ;
     private int nbrPlace ;
+
+    private String fileName;
     @ManyToMany(mappedBy = "event")
     private Set<User> users;
 
     @ManyToMany(mappedBy = "event")
     private Set<Sponsor> sponsors;
 
-    public Long getNumEvent() {
-        return numEvent;
-    }
-
-    public void setNumEvent(Long numEvent) {
-        this.numEvent = numEvent;
-    }
-
-    public String getNomEvent() {
-        return nomEvent;
-    }
-
-    public void setNomEvent(String nomEvent) {
-        this.nomEvent = nomEvent;
-    }
-
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Date getDateDebut() {
-        return dateDebut;
-    }
-
-    public void setDateDebut(Date dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public Date getDateFin() {
-        return dateFin;
-    }
-
-    public void setDateFin(Date dateFin) {
-        this.dateFin = dateFin;
-    }
-
-    public int getNbrPlace() {
-        return nbrPlace;
-    }
-
-    public void setNbrPlace(int nbrPlace) {
-        this.nbrPlace = nbrPlace;
-    }
 
 
 }

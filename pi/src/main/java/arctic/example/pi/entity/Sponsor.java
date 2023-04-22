@@ -1,43 +1,33 @@
-package tn.esprit.picloudbeta.entity;
+package arctic.example.pi.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Sponsor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long numSponsor;
+    private Long numSponsor;
 
-    public String nomSponsor;
+    private String nomSponsor;
+
+    private String Description;
+
+    private String fileName;
 
     @ManyToMany
-    public Set<Evenement> event;
+    private Set<Evenement> event;
 
 
-    public Long getNumSponsor() {
-        return numSponsor;
-    }
-
-    public void setNumSponsor(Long numSponsor) {
-        this.numSponsor = numSponsor;
-    }
-
-    public String getNomSponsor() {
-        return nomSponsor;
-    }
-
-    public void setNomSponsor(String nomSponsor) {
-        this.nomSponsor = nomSponsor;
-    }
-
-    public Set<Evenement> getEvent() {
-        return event;
-    }
-
-    public void setEvent(Set<Evenement> event) {
-        this.event = event;
-    }
 }
