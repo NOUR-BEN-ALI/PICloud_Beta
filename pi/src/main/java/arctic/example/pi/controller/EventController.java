@@ -9,20 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/events")
 public class EventController {
 
     @Autowired
     private IEventService eventService;
 
     @PostMapping("/addEvent")
-    public Evenement addEvent(@RequestBody Evenement event){
-        return eventService.addOrUpdateEvent(event);
+    public void addEvent(@RequestBody Evenement event){
+         eventService.addEvent(event);
     }
 
-    @PutMapping("/updateEvent")
+  /*  @PutMapping("/updateEvent")
     public  Evenement updateEvent(@RequestBody Evenement event){
         return eventService.addOrUpdateEvent(event);
     }
+   */
 
     @DeleteMapping("/deleteEvent")
     public void deleteEvent(@RequestBody Evenement event){
@@ -38,4 +40,7 @@ public class EventController {
     public Evenement getEventById(@PathVariable Long id){
         return eventService.retrieveEvent(id);
     }
+
+    @GetMapping("/getActivEvents")
+    public List<Evenement> getActiveEvents() {return eventService.retrieveActiveEvents();}
 }

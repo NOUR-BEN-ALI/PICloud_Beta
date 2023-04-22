@@ -11,7 +11,9 @@ public interface IEventService {
 
     List<Evenement> retrieveAllEvent();
 
-    Evenement addOrUpdateEvent(Evenement event);
+    List <Evenement> retrieveActiveEvents();
+
+    void addEvent(Evenement event);
 
     void removeEvenement (Evenement event);
 

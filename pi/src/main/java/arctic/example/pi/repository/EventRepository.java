@@ -1,10 +1,23 @@
 package arctic.example.pi.repository;
 
 import arctic.example.pi.entity.Evenement;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.sql.Date;
+import java.util.List;
+
 
 
 @Repository
 public interface EventRepository extends CrudRepository<Evenement,Long> {
+
+    @Query(value = "select * from Evenement where date_fin > NOW()",nativeQuery = true)
+    List<Evenement> getActiveEvents();
+
+
+    @Query(value = "SELECT * FROM Evenement WHERE (date_debut < :date_fin AND date_fin > :date_debut)",nativeQuery = true)
+    List<Evenement> getEventCondition(@Param("date_debut") Date date_debut, @Param("date_fin") Date date_fin);
 }
