@@ -20,4 +20,7 @@ public interface EventRepository extends CrudRepository<Evenement,Long> {
 
     @Query(value = "SELECT * FROM Evenement WHERE (date_debut < :date_fin AND date_fin > :date_debut)",nativeQuery = true)
     List<Evenement> getEventCondition(@Param("date_debut") Date date_debut, @Param("date_fin") Date date_fin);
+
+    @Query(value="SELECT e FROM Evenement e JOIN e.users r WHERE r.id = :num_user")
+    List<Evenement> getEventsByUser(@Param("num_user") Long num_user);
 }

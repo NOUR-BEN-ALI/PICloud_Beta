@@ -4,8 +4,10 @@ package arctic.example.pi.service;
 
 
 import arctic.example.pi.entity.Evenement;
+import arctic.example.pi.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IEventService {
 
@@ -13,11 +15,18 @@ public interface IEventService {
 
     List <Evenement> retrieveActiveEvents();
 
+    List <Evenement> retrieveReservationsByUser(Long numUser);
+
     void addEvent(Evenement event);
 
     void removeEvenement (Evenement event);
 
-    Evenement retrieveEvent (Long numEvent);
+    Optional< Evenement> retrieveEvent (Long numEvent);
 
     void removeReservation (Long numEvent, Long numUser);
+
+    void Reserver(Long numEvent, Long numUser);
+
+
+
 }
