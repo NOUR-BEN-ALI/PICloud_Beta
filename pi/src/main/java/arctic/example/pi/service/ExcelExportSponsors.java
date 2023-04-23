@@ -1,8 +1,6 @@
 package arctic.example.pi.service;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.usermodel.Row;
+import arctic.example.pi.entity.Evenement;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import arctic.example.pi.entity.Sponsor;
 import org.apache.poi.xssf.usermodel.XSSFFont;
@@ -14,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 public class ExcelExportSponsors {
 
@@ -50,6 +49,9 @@ public class ExcelExportSponsors {
         Row row = sheet.createRow(0);
         CellStyle style = workbook.createCellStyle();
         XSSFFont font = workbook.createFont();
+
+
+
         font.setBold(true);
         font.setFontHeight(20);
         style.setFont(font);
@@ -71,6 +73,9 @@ public class ExcelExportSponsors {
     }
 
     private void writeCustomerData(){
+        CreationHelper creationHelper = workbook.getCreationHelper();
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(creationHelper.createDataFormat().getFormat("dd/MM/yyyy"));
         int rowCount = 2;
         CellStyle style = workbook.createCellStyle();
         XSSFFont font = workbook.createFont();
@@ -83,9 +88,20 @@ public class ExcelExportSponsors {
 
             createCell(row, columnCount++, sponsor.getNomSponsor(), style);
             createCell(row, columnCount++, sponsor.getDescription(), style);
-            createCell(row, columnCount++, sponsor.getDebutContract(), style);
-            createCell(row, columnCount++, sponsor.getFinContract(), style);
-           // createCell(row, columnCount++, sponsor.getEvent(), style);
+            createCell(row, columnCount++, sponsor.getDebutContract(), dateCellStyle);
+            createCell(row, columnCount++, sponsor.getFinContract(), dateCellStyle);
+
+            Set<Evenement> events = sponsor.getEvent();
+            StringBuilder eventsNames = new StringBuilder();
+            for (Evenement event : events) {
+                eventsNames.append(event.getNomEvent()).append(", ");
+            }
+            if (eventsNames.length() > 0) {
+                eventsNames.delete(eventsNames.length() - 2, eventsNames.length());
+            } else {
+                eventsNames.append("None");
+            }
+            createCell(row, columnCount++, eventsNames.toString(), style);
 
         }
 
