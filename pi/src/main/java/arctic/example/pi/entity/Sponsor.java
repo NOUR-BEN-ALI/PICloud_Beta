@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sponsor {
+public class Sponsor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

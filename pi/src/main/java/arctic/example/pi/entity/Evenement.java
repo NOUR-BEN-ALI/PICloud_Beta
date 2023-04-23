@@ -8,6 +8,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Evenement {
+public class Evenement implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

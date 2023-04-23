@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -29,5 +31,13 @@ public class SponsorServiceImpl implements ISponsorService {
 
     public Sponsor retrieveSponsor(Long numSponsor) {
         return sponsorRepo.findById(numSponsor).get();
+    }
+
+    @Override
+    public List<Sponsor> exportSponsorsToExcel(HttpServletResponse response) throws IOException {
+        List<Sponsor> sponsors = (List<Sponsor>) sponsorRepo.findAll();
+        ExcelExportSponsors exportUtils = new ExcelExportSponsors(sponsors);
+        exportUtils.exportDataToExcel(response);
+        return sponsors;
     }
 }
