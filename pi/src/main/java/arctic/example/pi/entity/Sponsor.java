@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.sql.Date;
 import java.util.Set;
 
 @Entity
@@ -23,6 +24,9 @@ public class Sponsor {
     private String nomSponsor;
 
     private String Description;
+
+    private Date debutContract;
+    private Date finContract;
 
     private String fileName;
 

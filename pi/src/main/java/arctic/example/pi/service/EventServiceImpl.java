@@ -67,4 +67,9 @@ public class EventServiceImpl implements IEventService {
     public List<Evenement> retrieveReservationsByUser(Long numUser) {
         return eventRepo.getEventsByUser(numUser);
     }
+
+    @Override
+    public List<User> retrieveUsersByEvent(Long numEvent) {
+        return eventRepo.getUsersByEvent(numEvent);
+    }
 }

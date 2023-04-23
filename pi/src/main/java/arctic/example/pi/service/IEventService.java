@@ -17,6 +17,8 @@ public interface IEventService {
 
     List <Evenement> retrieveReservationsByUser(Long numUser);
 
+    List<User> retrieveUsersByEvent(Long numEvent);
+
     void addEvent(Evenement event);
 
     void removeEvenement (Evenement event);
