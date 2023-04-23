@@ -1,11 +1,11 @@
 package arctic.example.pi.service;
-
-
-
-
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.User;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.zxing.WriterException;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +27,9 @@ public interface IEventService {
 
     void removeReservation (Long numEvent, Long numUser);
 
-    void Reserver(Long numEvent, Long numUser);
+    void Reserver(Long numEvent, Long numUser) throws JsonProcessingException, IOException, WriterException, MessagingException;
+
+    void sendConfirmationEmail(String recipient, byte[] qrCode) throws MessagingException;
 
 
 

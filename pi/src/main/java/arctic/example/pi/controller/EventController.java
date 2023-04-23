@@ -4,6 +4,7 @@ import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.User;
 import arctic.example.pi.service.IEventService;
 import arctic.example.pi.service.ParticipantsPDFService;
+import com.google.zxing.WriterException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.mail.MessagingException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -51,7 +53,9 @@ public class EventController {
     }
 
     @PostMapping ("/resever/{idu}/{ide}")
-    public void assign(@PathVariable Long ide,@PathVariable Long idu){ eventService.Reserver(ide, idu);}
+    public void assign(@PathVariable Long ide,@PathVariable Long idu) throws IOException, WriterException, MessagingException
+
+    { eventService.Reserver(ide, idu);}
 
     @GetMapping("/getActivEvents")
     public List<Evenement> getActiveEvents() {return eventService.retrieveActiveEvents();}
@@ -86,5 +90,12 @@ public class EventController {
         return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(bis));
     }
+
+    /*@PostMapping("/sendmail/{email}")
+    public void envoyerMail(@PathVariable String email) throws MessagingException {
+         eventService.sendConfirmationEmail(email);
+    }*/
+
+
 
 }

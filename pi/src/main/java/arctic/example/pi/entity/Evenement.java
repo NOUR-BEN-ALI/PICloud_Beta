@@ -32,6 +32,8 @@ public class Evenement implements Serializable {
     private Date dateFin ;
     private int nbrPlace ;
 
+    private Double prix;
+
     private String fileName;
     @ManyToMany(mappedBy = "event")
     private Set<User> users;
