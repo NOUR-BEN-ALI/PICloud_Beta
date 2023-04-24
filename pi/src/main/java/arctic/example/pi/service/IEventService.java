@@ -29,7 +29,6 @@ public interface IEventService {
 
     void Reserver(Long numEvent, Long numUser) throws JsonProcessingException, IOException, WriterException, MessagingException;
 
-    void sendConfirmationEmail(String recipient, byte[] qrCode) throws MessagingException;
 
 
 
