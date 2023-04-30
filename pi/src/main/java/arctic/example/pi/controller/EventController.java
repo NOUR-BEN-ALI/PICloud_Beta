@@ -1,6 +1,7 @@
 package arctic.example.pi.controller;
 
 import arctic.example.pi.entity.Evenement;
+import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
 import arctic.example.pi.service.IEventService;
 import arctic.example.pi.service.ParticipantsPDFService;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/events")
 public class EventController {
@@ -31,15 +33,15 @@ public class EventController {
          eventService.addEvent(event);
     }
 
-  /*  @PutMapping("/updateEvent")
-    public  Evenement updateEvent(@RequestBody Evenement event){
-        return eventService.addOrUpdateEvent(event);
+    @PutMapping("/updateEvent")
+    public  void updateEvent(@RequestBody Evenement event){
+         eventService.updateEvenement(event);
     }
-   */
 
-    @DeleteMapping("/deleteEvent")
-    public void deleteEvent(@RequestBody Evenement event){
-        eventService.removeEvenement(event);
+
+    @DeleteMapping("/deleteEvent/{id}")
+    public void deleteEvent(@PathVariable Long id ){
+        eventService.removeEvenement(id);
     }
 
     @GetMapping("/events")
@@ -74,6 +76,12 @@ public class EventController {
     @DeleteMapping("/deleteReservation/{ide}/{idu}")
     public void deleteReservation(@PathVariable Long idu,@PathVariable Long ide){
         eventService.removeReservation(ide,idu);
+    }
+
+    @GetMapping("/sponsorsNonDuevent/{id}")
+    //@PreAuthorize("hasRole('ADMIN') ")
+    public List<Sponsor> getSponsorNonDuEvent(@PathVariable Long id) {
+        return eventService.getSponsorNonDuEvent(id);
     }
 
 

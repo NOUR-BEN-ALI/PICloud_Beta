@@ -1,7 +1,10 @@
 package arctic.example.pi.service;
+import arctic.example.pi.entity.Sponsor;
+import arctic.example.pi.repository.SponsorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
+import org.apache.poi.ss.formula.functions.Even;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -26,6 +29,8 @@ public class EventServiceImpl implements IEventService {
     EventRepository eventRepo;
 
     @Autowired
+    SponsorRepository sponsorRepo;
+    @Autowired
     UserRepository userRepo;
 
     @Autowired
@@ -47,8 +52,22 @@ public class EventServiceImpl implements IEventService {
             eventRepo.save(event);
     }
 
-    public void removeEvenement(Evenement event) {
-            eventRepo.delete(event);
+    @Override
+    public void updateEvenement(Evenement event) {
+        Optional<Evenement> events = eventRepo.findById(event.getNumEvent());
+        if (events.isPresent()) {
+            events.get().setNomEvent(event.getNomEvent());
+            events.get().setDescription(event.getDescription());
+            events.get().setDateDebut(event.getDateDebut());
+            events.get().setDateFin(event.getDateFin());
+            events.get().setNbrPlace(event.getNbrPlace());
+            events.get().setPrix(event.getPrix());
+            eventRepo.save(events.get());
+        }
+    }
+
+    public void removeEvenement(Long id) {
+            eventRepo.deleteById(id);
     }
 
     public Optional<Evenement> retrieveEvent(Long numEvent) {
@@ -260,6 +279,43 @@ public class EventServiceImpl implements IEventService {
 
         mailSender.send(message);
     }
+
+    @Override
+    public List<Sponsor> getSponsorNonDuEvent(Long id) {
+        Optional<Evenement> c = eventRepo.findById(id);
+        List <Sponsor> listQ = (List<Sponsor>) sponsorRepo.findAll();
+        List <Sponsor> listQF = c.get().getSponsors();
+        listQ.removeAll(listQF);
+        if (Boolean.FALSE.equals(listQ.isEmpty())) {
+            return listQ;
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
+    public List<Sponsor> getSponsorsDuEvent(Long id) {
+        Optional<Evenement> c = eventRepo.findById(id);
+        if (c.isPresent()) {
+            return c.get().getSponsors();
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public void removeSponsorFromEvent(Long idEvent, Long idSponsor) {
+        Optional<Evenement> c = eventRepo.findById(idEvent);
+        if (c.isPresent()) {
+            for (Iterator<Sponsor> iterator = c.get().getSponsors().iterator(); iterator.hasNext();) {
+                Sponsor p = iterator.next();
+                if (p.getNumSponsor() == idSponsor) {
+                    iterator.remove();
+                }
+            }
+            eventRepo.save(c.get());
+        }
+    }
+
 
     @Override
     public List<Evenement> retrieveReservationsByUser(Long numUser) {

@@ -1,5 +1,6 @@
 package arctic.example.pi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class Sponsor implements Serializable {
 
     private String fileName;
 
+    @JsonIgnore
     @ManyToMany
     private Set<Evenement> event;
 

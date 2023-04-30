@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,7 +19,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Evenement implements Serializable {
+public class Evenement  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +40,7 @@ public class Evenement implements Serializable {
     private Set<User> users;
 
     @ManyToMany(mappedBy = "event")
-    private Set<Sponsor> sponsors;
+    private List<Sponsor> sponsors;
 
 
 

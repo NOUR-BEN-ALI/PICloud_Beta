@@ -1,5 +1,6 @@
 package arctic.example.pi.service;
 import arctic.example.pi.entity.Evenement;
+import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.zxing.WriterException;
@@ -21,7 +22,9 @@ public interface IEventService {
 
     void addEvent(Evenement event);
 
-    void removeEvenement (Evenement event);
+    void updateEvenement(Evenement event);
+
+    void removeEvenement (Long id);
 
     Optional< Evenement> retrieveEvent (Long numEvent);
 
@@ -30,6 +33,9 @@ public interface IEventService {
     void Reserver(Long numEvent, Long numUser) throws JsonProcessingException, IOException, WriterException, MessagingException;
 
 
+    List<Sponsor> getSponsorNonDuEvent(Long id);
 
+    List<Sponsor> getSponsorsDuEvent(Long id);
 
+    public void removeSponsorFromEvent(Long idEvent , Long idSponsor);
 }
