@@ -1,5 +1,6 @@
 package arctic.example.pi.controller;
 
+import arctic.example.pi.DTO.AssignToEventRequest;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
@@ -79,9 +80,23 @@ public class EventController {
     }
 
     @GetMapping("/sponsorsNonDuevent/{id}")
-    //@PreAuthorize("hasRole('ADMIN') ")
     public List<Sponsor> getSponsorNonDuEvent(@PathVariable Long id) {
         return eventService.getSponsorNonDuEvent(id);
+    }
+
+    @GetMapping("/SponsorDuEvent/{id}")
+    public List<Sponsor> getSponsorsDuEvent(@PathVariable Long id) {
+        return eventService.getSponsorsDuEvent(id);
+    }
+
+    @PostMapping("/assignSponsor}")
+    public void assignSponsorToEvent(@RequestBody AssignToEventRequest req) {
+        eventService.addSponsorFromEvent(req);
+    }
+
+    @PostMapping("/removeSponsor/{ide}/{ids}")
+    public void removeSponsorDuEvent(@PathVariable Long ide,@PathVariable Long ids) {
+        eventService.removeSponsorFromEvent(ide,ids);
     }
 
 
@@ -99,10 +114,6 @@ public class EventController {
                 .body(new InputStreamResource(bis));
     }
 
-    /*@PostMapping("/sendmail/{email}")
-    public void envoyerMail(@PathVariable String email) throws MessagingException {
-         eventService.sendConfirmationEmail(email);
-    }*/
 
 
 

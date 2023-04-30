@@ -1,4 +1,5 @@
 package arctic.example.pi.service;
+import arctic.example.pi.DTO.AssignToEventRequest;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.repository.SponsorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -299,6 +300,25 @@ public class EventServiceImpl implements IEventService {
             return c.get().getSponsors();
         } else {
             return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public void addSponsorFromEvent(AssignToEventRequest assignToEventRequest) {
+        Optional<Evenement> c = eventRepo.findById(assignToEventRequest.getEventId());
+        Long[] sponsIds = assignToEventRequest.getSponsorId();
+        List<Sponsor> sponsors = new ArrayList<>();
+        if (c.isPresent()) {
+
+            for (int i=0;i < sponsIds.length;i++) {
+                Optional<Sponsor> p=sponsorRepo.findById(sponsIds[i]);
+                if (p.isPresent()) {
+                    sponsors.add(p.get());
+
+                }
+            }
+            c.get().setSponsors(sponsors);
+            eventRepo.save(c.get());
         }
     }
 

@@ -1,4 +1,5 @@
 package arctic.example.pi.service;
+import arctic.example.pi.DTO.AssignToEventRequest;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
@@ -37,5 +38,6 @@ public interface IEventService {
 
     List<Sponsor> getSponsorsDuEvent(Long id);
 
+    public void addSponsorFromEvent(AssignToEventRequest assignToEventRequest);
     public void removeSponsorFromEvent(Long idEvent , Long idSponsor);
 }
