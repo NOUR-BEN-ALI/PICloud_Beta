@@ -39,7 +39,11 @@ public class Evenement  {
     @ManyToMany(mappedBy = "event")
     private Set<User> users;
 
-    @ManyToMany(mappedBy = "event")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "event_sponsor",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "sponsor_id")
+    )
     private List<Sponsor> sponsors;
 
 

@@ -1,6 +1,7 @@
 package arctic.example.pi.controller;
 
 import arctic.example.pi.DTO.AssignToEventRequest;
+import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
@@ -79,7 +80,7 @@ public class EventController {
         eventService.removeReservation(ide,idu);
     }
 
-    @GetMapping("/sponsorsNonDuevent/{id}")
+    @GetMapping("/sponsorsNonDuEvent/{id}")
     public List<Sponsor> getSponsorNonDuEvent(@PathVariable Long id) {
         return eventService.getSponsorNonDuEvent(id);
     }
@@ -89,14 +90,14 @@ public class EventController {
         return eventService.getSponsorsDuEvent(id);
     }
 
-    @PostMapping("/assignSponsor}")
+    @PostMapping("/assignSponsor")
     public void assignSponsorToEvent(@RequestBody AssignToEventRequest req) {
         eventService.addSponsorFromEvent(req);
     }
 
-    @PostMapping("/removeSponsor/{ide}/{ids}")
-    public void removeSponsorDuEvent(@PathVariable Long ide,@PathVariable Long ids) {
-        eventService.removeSponsorFromEvent(ide,ids);
+    @PostMapping("/removeSponsor")
+    public void removeSponsorDuEvent(@RequestBody RemoveSponsorFromEventRequest req) {
+        eventService.removeSponsorFromEvent(req);
     }
 
 

@@ -1,9 +1,8 @@
 package arctic.example.pi.DTO;
 
-public class AssignToEventRequest {
-
+public class RemoveSponsorFromEventRequest {
     private Long numEvent;
-    private Long[] numSponsor;
+    private Long numSponsor;
 
     public Long getNumEvent() {
         return numEvent;
@@ -13,11 +12,11 @@ public class AssignToEventRequest {
         this.numEvent = numEvent;
     }
 
-    public Long[] getNumSponsor() {
+    public Long getNumSponsor() {
         return numSponsor;
     }
 
-    public void setNumSponsor(Long[] numSponsor) {
+    public void setNumSponsor(Long numSponsor) {
         this.numSponsor = numSponsor;
     }
 }

@@ -73,7 +73,7 @@ public class ExcelExportSponsors {
     }
 
     private void writeCustomerData(){
-        CreationHelper creationHelper = workbook.getCreationHelper();
+       /* CreationHelper creationHelper = workbook.getCreationHelper();
         CellStyle dateCellStyle = workbook.createCellStyle();
         dateCellStyle.setDataFormat(creationHelper.createDataFormat().getFormat("dd/MM/yyyy"));
         int rowCount = 2;
@@ -103,7 +103,7 @@ public class ExcelExportSponsors {
             }
             createCell(row, columnCount++, eventsNames.toString(), style);
 
-        }
+        }*/
 
     }
 

@@ -1,5 +1,6 @@
 package arctic.example.pi.service;
 import arctic.example.pi.DTO.AssignToEventRequest;
+import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.repository.SponsorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,6 +16,7 @@ import arctic.example.pi.repository.EventRepository;
 import arctic.example.pi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import javax.mail.MessagingException;
@@ -302,33 +304,33 @@ public class EventServiceImpl implements IEventService {
             return Collections.emptyList();
         }
     }
-
+    @Transactional
     @Override
-    public void addSponsorFromEvent(AssignToEventRequest assignToEventRequest) {
-        Optional<Evenement> c = eventRepo.findById(assignToEventRequest.getEventId());
-        Long[] sponsIds = assignToEventRequest.getSponsorId();
-        List<Sponsor> sponsors = new ArrayList<>();
-        if (c.isPresent()) {
 
-            for (int i=0;i < sponsIds.length;i++) {
-                Optional<Sponsor> p=sponsorRepo.findById(sponsIds[i]);
-                if (p.isPresent()) {
-                    sponsors.add(p.get());
-
+        public void addSponsorFromEvent (AssignToEventRequest assignToEventRequest){
+            Optional<Evenement> c = eventRepo.findById(assignToEventRequest.getNumEvent());
+            Long[] sponsIds = assignToEventRequest.getNumSponsor();
+            List<Sponsor> sponsors = new ArrayList<>();
+            if (c.isPresent()) {
+                for (int i = 0; i < sponsIds.length; i++) {
+                    Optional<Sponsor> p = sponsorRepo.findById(sponsIds[i]);
+                    if (p.isPresent()) {
+                        sponsors.add(p.get());
+                    }
                 }
+                c.get().getSponsors().addAll(sponsors);
+                eventRepo.save(c.get());
             }
-            c.get().setSponsors(sponsors);
-            eventRepo.save(c.get());
         }
-    }
+
 
     @Override
-    public void removeSponsorFromEvent(Long idEvent, Long idSponsor) {
-        Optional<Evenement> c = eventRepo.findById(idEvent);
+    public void removeSponsorFromEvent(RemoveSponsorFromEventRequest req) {
+        Optional<Evenement> c = eventRepo.findById(req.getNumEvent());
         if (c.isPresent()) {
             for (Iterator<Sponsor> iterator = c.get().getSponsors().iterator(); iterator.hasNext();) {
                 Sponsor p = iterator.next();
-                if (p.getNumSponsor() == idSponsor) {
+                if (p.getNumSponsor() == req.getNumSponsor()) {
                     iterator.remove();
                 }
             }
