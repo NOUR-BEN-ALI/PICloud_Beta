@@ -1,24 +1,35 @@
 package arctic.example.pi.controller;
 
 import arctic.example.pi.DTO.AssignToEventRequest;
+import arctic.example.pi.DTO.RemoveReservationRequest;
 import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
 import arctic.example.pi.service.IEventService;
 import arctic.example.pi.service.ParticipantsPDFService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.mail.MessagingException;
+import javax.servlet.ServletContext;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,9 +41,34 @@ public class EventController {
     @Autowired
     private IEventService eventService;
 
-    @PostMapping("/addEvent")
-    public void addEvent(@RequestBody Evenement event){
-         eventService.addEvent(event);
+    @Autowired
+    ServletContext context;
+
+    @PostMapping(value = "/addEvent")
+    public void addSponsor(@RequestParam("file") MultipartFile file, @RequestParam("event") String event) throws IOException {
+        System.out.println("Save event.............");
+        Evenement ev = new ObjectMapper().readValue(event, Evenement.class);
+
+        String filename = StringUtils.cleanPath(file.getOriginalFilename());
+        String newFileName = FilenameUtils.getBaseName(filename) + "." + FilenameUtils.getExtension(filename);
+        File serverFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + newFileName);
+
+        try {
+            FileUtils.writeByteArrayToFile(serverFile, file.getBytes());
+        } catch (IOException e) {
+            throw new IOException("Failed to save file: " + e.getMessage());
+        }
+
+        System.out.println("Real path: " + serverFile.getAbsolutePath());
+
+        ev.setFileName(newFileName);
+
+        try {
+            eventService.addEvent(ev);
+        } catch (Exception e) {
+            FileUtils.deleteQuietly(serverFile);
+            throw new IOException("Failed to save event: " + e.getMessage());
+        }
     }
 
     @PutMapping("/updateEvent")
@@ -56,10 +92,17 @@ public class EventController {
         return eventService.retrieveEvent(id);
     }
 
-    @PostMapping ("/resever/{idu}/{ide}")
-    public void assign(@PathVariable Long ide,@PathVariable Long idu) throws IOException, WriterException, MessagingException
+    @PostMapping ("/resever/{numEvent}/{id}")
+    public void assign(@PathVariable Long numEvent,@PathVariable Long id) throws IOException, WriterException, MessagingException
 
-    { eventService.Reserver(ide, idu);}
+    { eventService.Reserver(numEvent, id);}
+
+    @GetMapping(path="/ImgEvent/{numEvent}")
+    public byte[] getPhoto(@PathVariable("numEvent") Long id) throws Exception{
+        Evenement event   =eventService.retrieveEvent(id).get();
+        Path imagePath = Paths.get("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + event.getFileName());
+        return Files.readAllBytes(imagePath);
+    }
 
     @GetMapping("/getActivEvents")
     public List<Evenement> getActiveEvents() {return eventService.retrieveActiveEvents();}
@@ -75,9 +118,9 @@ public class EventController {
     }
 
 
-    @DeleteMapping("/deleteReservation/{ide}/{idu}")
-    public void deleteReservation(@PathVariable Long idu,@PathVariable Long ide){
-        eventService.removeReservation(ide,idu);
+    @PostMapping("/deleteReservation")
+    public void deleteReservation(@RequestBody RemoveReservationRequest removeReservationRequest){
+        eventService.removeReservation(removeReservationRequest);
     }
 
     @GetMapping("/sponsorsNonDuEvent/{id}")
@@ -102,9 +145,9 @@ public class EventController {
 
 
 
-    @GetMapping(value = "/openpdf/participants/{ide}", produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> employeeReport(@PathVariable Long ide)  throws IOException {
-        List<User> participants = (List<User>) eventService.retrieveUsersByEvent(ide);
+    @GetMapping(value = "/openpdf/participants/{numEvent}", produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<InputStreamResource> employeeReport(@PathVariable Long numEvent)  throws IOException {
+        List<User> participants = (List<User>) eventService.retrieveUsersByEvent(numEvent);
 
         ByteArrayInputStream bis = ParticipantsPDFService.participantPDFReport(participants);
 

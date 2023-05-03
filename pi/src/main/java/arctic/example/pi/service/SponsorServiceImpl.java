@@ -1,14 +1,21 @@
 package arctic.example.pi.service;
 
+import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.repository.SponsorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.file.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SponsorServiceImpl implements ISponsorService {
@@ -21,14 +28,29 @@ public class SponsorServiceImpl implements ISponsorService {
         return (List<Sponsor>) sponsorRepo.findAll();
     }
 
-    public Sponsor addOrUpdateSponsor(Sponsor sponsor) {
-        return sponsorRepo.save(sponsor);
+    @Override
+    public void addSponsor(Sponsor sponsor) {
+     sponsorRepo.save(sponsor);
     }
 
-    public void removeSponsor(Sponsor sponsor) {
-        sponsorRepo.delete(sponsor);
+
+
+    @Override
+    public void updateSponsor(Sponsor sponsor) {
+        Optional<Sponsor> spons = sponsorRepo.findById(sponsor.getNumSponsor());
+        if (spons.isPresent()) {
+            spons.get().setNomSponsor(sponsor.getNomSponsor());
+            spons.get().setDescription(sponsor.getDescription());
+            spons.get().setDebutContract(sponsor.getDebutContract());
+            spons.get().setFinContract(sponsor.getFinContract());
+            sponsorRepo.save(spons.get());
+        }
     }
 
+    @Override
+    public void removeSponsor(Long id) {
+        sponsorRepo.deleteById(id);
+    }
     public Sponsor retrieveSponsor(Long numSponsor) {
         return sponsorRepo.findById(numSponsor).get();
     }

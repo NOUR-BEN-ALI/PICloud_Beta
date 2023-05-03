@@ -19,7 +19,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Evenement  {
+public class Evenement  implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

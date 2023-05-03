@@ -1,5 +1,6 @@
 package arctic.example.pi.service;
 import arctic.example.pi.DTO.AssignToEventRequest;
+import arctic.example.pi.DTO.RemoveReservationRequest;
 import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
@@ -30,7 +31,7 @@ public interface IEventService {
 
     Optional< Evenement> retrieveEvent (Long numEvent);
 
-    void removeReservation (Long numEvent, Long numUser);
+    void removeReservation (RemoveReservationRequest removeReservationRequest);
 
     void Reserver(Long numEvent, Long numUser) throws JsonProcessingException, IOException, WriterException, MessagingException;
 

@@ -57,7 +57,7 @@ public class ExcelExportSponsors {
         style.setFont(font);
         style.setAlignment(HorizontalAlignment.CENTER);
         createCell(row, 0, "Sponsors Information", style);
-        sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
+        sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 4));
         font.setFontHeightInPoints((short) 10);
 
         row = sheet.createRow(1);
@@ -68,12 +68,12 @@ public class ExcelExportSponsors {
         createCell(row, 1, "Description", style);
         createCell(row, 2, "Contract start date", style);
         createCell(row, 3, "Contract end date", style);
-        createCell(row, 4, "Event Name", style);
+        //createCell(row, 4, "Event Name", style);
 
     }
 
     private void writeCustomerData(){
-       /* CreationHelper creationHelper = workbook.getCreationHelper();
+        CreationHelper creationHelper = workbook.getCreationHelper();
         CellStyle dateCellStyle = workbook.createCellStyle();
         dateCellStyle.setDataFormat(creationHelper.createDataFormat().getFormat("dd/MM/yyyy"));
         int rowCount = 2;
@@ -91,7 +91,7 @@ public class ExcelExportSponsors {
             createCell(row, columnCount++, sponsor.getDebutContract(), dateCellStyle);
             createCell(row, columnCount++, sponsor.getFinContract(), dateCellStyle);
 
-            Set<Evenement> events = sponsor.getEvent();
+            /*Set<Evenement> events = sponsor.getEvent();
             StringBuilder eventsNames = new StringBuilder();
             for (Evenement event : events) {
                 eventsNames.append(event.getNomEvent()).append(", ");
@@ -101,9 +101,9 @@ public class ExcelExportSponsors {
             } else {
                 eventsNames.append("None");
             }
-            createCell(row, columnCount++, eventsNames.toString(), style);
+            createCell(row, columnCount++, eventsNames.toString(), style);*/
 
-        }*/
+        }
 
     }
 
