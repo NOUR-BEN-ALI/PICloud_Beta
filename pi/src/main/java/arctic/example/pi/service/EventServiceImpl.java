@@ -373,13 +373,11 @@ public class EventServiceImpl implements IEventService {
     public List<User> retrieveUsersByEvent(Long numEvent) {
 
         Optional<Evenement> c = eventRepo.findById(numEvent);
-        List <User> listQ = (List<User>) userRepo.findAll();
-        List <User> listQF = c.get().getUsers();
-        listQ.removeAll(listQF);
-        if (Boolean.FALSE.equals(listQ.isEmpty())) {
-            return listQ;
+        if (c.isPresent()) {
+            return c.get().getUsers();
+        } else {
+            return Collections.emptyList();
         }
-        return Collections.emptyList();
     }
 
     public int countActiveEvents() {

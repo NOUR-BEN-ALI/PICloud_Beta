@@ -144,10 +144,7 @@ public class EventController {
         return eventService.retrieveReservationsByUser(id);
     }
 
-    @GetMapping("/getParticipants/{numEvent}")
-    public List<User> getUsersByEvent(@PathVariable Long numEvent){
-        return eventService.retrieveUsersByEvent(numEvent);
-    }
+
 
 
     @PostMapping("/deleteReservation")
@@ -164,7 +161,10 @@ public class EventController {
     public List<Sponsor> getSponsorsDuEvent(@PathVariable Long id) {
         return eventService.getSponsorsDuEvent(id);
     }
-
+    @GetMapping("/getParticipants/{id}")
+    public List<User> getUsersByEvent(@PathVariable Long id){
+        return eventService.retrieveUsersByEvent(id);
+    }
     @PostMapping("/assignSponsor")
     public void assignSponsorToEvent(@RequestBody AssignToEventRequest req) {
         eventService.addSponsorFromEvent(req);
