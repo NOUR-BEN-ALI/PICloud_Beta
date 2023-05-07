@@ -24,6 +24,7 @@ public class Associations implements Serializable {
     private String tel;
     private String mail;
     private String nom;
+    private String imageFileName;
     @OneToMany(mappedBy = "associations")
     @JsonIgnore
     private Set<Donations> donations = new HashSet<>() ;

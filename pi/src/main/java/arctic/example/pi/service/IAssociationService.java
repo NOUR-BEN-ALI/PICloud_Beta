@@ -9,5 +9,7 @@ public interface IAssociationService {
    Associations updateAssociation(Associations associations);
    void deleteAssociation(Long id);
    List<Associations> getAssociation();
+   List<Associations> findAssociationsWithoutDon();
+
 
 }

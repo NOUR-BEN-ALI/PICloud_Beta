@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Merci pour votre don</title>
+    <style th:inline="css">
+        /* CSS reset */
+        body, html, p, h1, h2, h3, h4, h5, h6, ul, ol, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img class="logo" src="https://www.google.com/url?sa=i&url=https%3A%2F%2F99designs.fr%2Flogo-design%2Fcontests%2Fsmart-fresh-logo-food-waste-725811&psig=AOvVaw21IGGICDWFk8dkNkAUZjo4&ust=1682456879657000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIDc57m2w_4CFQAAAAAdAAAAABAP" alt="Logo de l'association">
+    <h1>Merci pour votre don !</h1>
+    <p>Bonjour <span th:text="${nom}"></span>,</p>
+    <p>Toute l'équipe de <span th:text="${association}"></span> vous remercie pour votre générosité. Grâce à votre don de <span th:text="${montant}"></span> euros, nous pourrons poursuivre notre mission .</p>
+    <p>Merci encore pour votre soutien !</p>
+    <a href="https://example.com" class="cta-button">Visiter notre site web</a>
+</div>
+</body>
+</html>
