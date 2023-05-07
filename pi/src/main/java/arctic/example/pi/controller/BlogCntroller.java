@@ -2,6 +2,7 @@ package arctic.example.pi.controller;
 
 import arctic.example.pi.entity.Articles;
 import arctic.example.pi.entity.Blog;
+import arctic.example.pi.entity.Reclamation;
 import arctic.example.pi.service.BlogService;
 import arctic.example.pi.service.IEmailService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -126,5 +127,13 @@ public class BlogCntroller {
     @ResponseBody
     public Set<Blog> rechercheblog(@PathVariable("titre") String titre) {
         return BlogService.getblog(titre);
+    }
+
+
+    @GetMapping("/alluser/{id}")
+    public List<Blog> afficherbyuser(@PathVariable(value="id")Long id)
+
+    {
+        return BlogService.findByuser(id);
     }
 }

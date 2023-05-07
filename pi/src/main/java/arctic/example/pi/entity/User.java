@@ -99,4 +99,14 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 
     private List<Reclamation> reclamations;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+
+    private List<Reclamation> blogs;
+
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+
+    private List<Reclamation> articles;
 }

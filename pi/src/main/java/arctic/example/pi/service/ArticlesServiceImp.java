@@ -1,10 +1,9 @@
 package arctic.example.pi.service;
 
-import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Blog;
-import arctic.example.pi.entity.Statuarticle;
+import arctic.example.pi.entity.*;
 import arctic.example.pi.repository.ArticlesRepository;
 import arctic.example.pi.repository.BlogRepository;
+import arctic.example.pi.repository.UserRepository;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -39,6 +38,10 @@ public class ArticlesServiceImp implements ArticlesService {
     ArticlesRepository ArticlesRepo;
     @Autowired
     BlogRepository blogRepository;
+
+
+    @Autowired
+    UserRepository userRepository;
     /*@Override
     public Articles saveArticles(Articles articles) {
         return ArticlesRepo.save(articles);
@@ -184,5 +187,13 @@ return ArticlesRepo.findAllByBlog(blog);
     @Override
     public Long countArticlesByStatut(Statuarticle statut) {
         return ArticlesRepo.countArticlesByStatut(statut);
+    }
+
+
+
+    public List<Articles> findByuser(Long id)
+    {
+        User user= userRepository.findById(id).get();
+        return ArticlesRepo.findAllByUser(user);
     }
 }

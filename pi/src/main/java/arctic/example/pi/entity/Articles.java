@@ -1,6 +1,7 @@
 package arctic.example.pi.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,11 @@ public class Articles implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idB")
     private Blog blog;
+
+
+    @ManyToOne
+    @JsonIgnore
+    private User user;
 
 
 }

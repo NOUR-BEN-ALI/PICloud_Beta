@@ -1,8 +1,6 @@
 package arctic.example.pi.repository;
 
-import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Blog;
-import arctic.example.pi.entity.Statuarticle;
+import arctic.example.pi.entity.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -26,5 +24,7 @@ public interface ArticlesRepository extends JpaRepository<Articles,Long> {
     int nbr();
     @Query("SELECT COUNT(a) FROM Articles a WHERE a.statuarticle = :statut")
     Long countArticlesByStatut(@Param("statut") Statuarticle statut);
+
+    List<Articles> findAllByUser(User user);
 
 }

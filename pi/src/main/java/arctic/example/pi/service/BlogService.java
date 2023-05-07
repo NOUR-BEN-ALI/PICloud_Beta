@@ -1,5 +1,6 @@
 package arctic.example.pi.service;
 
+import arctic.example.pi.entity.Articles;
 import arctic.example.pi.entity.Blog;
 
 import java.io.ByteArrayInputStream;
@@ -18,4 +19,7 @@ public interface BlogService {
     Set<Blog> getblog(String titre);
     public Blog getBlogById(Long id);
     //public Articles updateArticle(Articles articles);
+
+    List<Blog> findByuser(Long id);
+
 }

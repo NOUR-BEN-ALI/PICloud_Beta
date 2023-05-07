@@ -2,6 +2,7 @@ package arctic.example.pi.service;
 
 
 import arctic.example.pi.entity.Articles;
+import arctic.example.pi.entity.Reclamation;
 import arctic.example.pi.entity.Statuarticle;
 import org.springframework.social.connect.ConnectionFactory;
 import org.springframework.social.facebook.api.Facebook;
@@ -31,4 +32,8 @@ public interface ArticlesService {
     Long countArticlesByStatut(Statuarticle statut);
     //public ConnectionFactory<Facebook> facebookConnectionFactory() ;
     //public int countArticlesByStatu(Statuarticle statuarticle);
+
+
+
+    List<Articles> findByuser(Long id);
 }

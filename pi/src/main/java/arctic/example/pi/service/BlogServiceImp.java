@@ -2,7 +2,9 @@ package arctic.example.pi.service;
 
 import arctic.example.pi.entity.Articles;
 import arctic.example.pi.entity.Blog;
+import arctic.example.pi.entity.User;
 import arctic.example.pi.repository.BlogRepository;
+import arctic.example.pi.repository.UserRepository;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -22,6 +24,9 @@ import java.util.stream.Stream;
 public class BlogServiceImp implements BlogService {
     @Autowired
     BlogRepository BlogRepo;
+
+    @Autowired
+    UserRepository userRepository;
     @Override
     public Blog saveBlog(Blog Blog) {
         return BlogRepo.save(Blog);
@@ -119,5 +124,12 @@ public class BlogServiceImp implements BlogService {
     public Set<Blog> getblog(String titre) {
 
         return BlogRepo.findByTitre(titre);
+    }
+
+
+    public List<Blog> findByuser(Long id)
+    {
+        User user= userRepository.findById(id).get();
+        return BlogRepo.findAllByUser(user);
     }
 }

@@ -33,6 +33,9 @@ public class Blog implements Serializable {
     @JsonIgnore
     private Set<Articles> article = new HashSet<>() ;
 
+    @ManyToOne
+    @JsonIgnore
+    private User user;
 
 
 
