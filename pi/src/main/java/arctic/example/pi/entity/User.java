@@ -68,8 +68,8 @@ public class User implements Serializable {
     @JsonIgnore
     Organisation organisation;
 
-    @ManyToMany
+    /*@ManyToMany
     @JsonIgnore
-    Set<Evenement> event;
+    Set<Evenement> event;*/
 
 }

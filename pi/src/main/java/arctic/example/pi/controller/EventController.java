@@ -1,8 +1,6 @@
 package arctic.example.pi.controller;
 
-import arctic.example.pi.DTO.AssignToEventRequest;
-import arctic.example.pi.DTO.RemoveReservationRequest;
-import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
+import arctic.example.pi.DTO.*;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
@@ -71,9 +69,43 @@ public class EventController {
         }
     }
 
-    @PutMapping("/updateEvent")
-    public  void updateEvent(@RequestBody Evenement event){
-         eventService.updateEvenement(event);
+    @PutMapping("/updateEvent/{numEvent}")
+    public  void updateEvent(@RequestParam("file") MultipartFile file, @RequestParam("event") String event, @PathVariable("numEvent") Long numEvent)throws IOException{
+
+        System.out.println("Save event.............");
+        Evenement ev = new ObjectMapper().readValue(event, Evenement.class);
+        ev.setNumEvent(numEvent);
+        String originalFileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String newFileName = FilenameUtils.getBaseName(originalFileName) + "." + FilenameUtils.getExtension(originalFileName);
+
+        // Create a file object for the new image file
+        File newFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + newFileName);
+
+        // Delete the old image file if it exists
+        String oldFileName = ev.getFileName();
+        if (oldFileName != null) {
+            File oldFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + oldFileName);
+            FileUtils.deleteQuietly(oldFile);
+        }
+
+        // Write the new image file to the server
+        try {
+            FileUtils.writeByteArrayToFile(newFile, file.getBytes());
+        } catch (IOException e) {
+            throw new IOException("Failed to save file: " + e.getMessage());
+        }
+
+        // Set the new file name in the event object
+        ev.setFileName(newFileName);
+
+        // Update the event in the database
+        try {
+            eventService.updateEvenement(ev);
+            System.out.println(ev.getFileName());
+        } catch (Exception e) {
+            FileUtils.deleteQuietly(newFile);
+            throw new IOException("Failed to save event: " + e.getMessage());
+        }
     }
 
 
@@ -92,10 +124,10 @@ public class EventController {
         return eventService.retrieveEvent(id);
     }
 
-    @PostMapping ("/resever/{numEvent}/{id}")
-    public void assign(@PathVariable Long numEvent,@PathVariable Long id) throws IOException, WriterException, MessagingException
+    @PostMapping ("/reserver")
+    public void assign(@RequestBody ReservationRequest reservationRequest) throws IOException, WriterException, MessagingException
 
-    { eventService.Reserver(numEvent, id);}
+    { eventService.Reserver(reservationRequest);}
 
     @GetMapping(path="/ImgEvent/{numEvent}")
     public byte[] getPhoto(@PathVariable("numEvent") Long id) throws Exception{
@@ -143,7 +175,15 @@ public class EventController {
         eventService.removeSponsorFromEvent(req);
     }
 
+@GetMapping("/soldOut")
+public int getSoldOutEvents(){
+        return eventService.countSoldOutEvents();
+}
 
+    @GetMapping("/placeDispo/{numEvent}")
+    public int getAvailablePlacesPerEvent(@PathVariable Long numEvent){
+        return eventService.numberPlacesAvailablePerEvent(numEvent);
+    }
 
     @GetMapping(value = "/openpdf/participants/{numEvent}", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> employeeReport(@PathVariable Long numEvent)  throws IOException {
@@ -156,6 +196,11 @@ public class EventController {
 
         return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
                 .body(new InputStreamResource(bis));
+    }
+
+    @GetMapping("/home")
+    public AccueilStat accueil() {
+        return eventService.pageAccueil();
     }
 
 

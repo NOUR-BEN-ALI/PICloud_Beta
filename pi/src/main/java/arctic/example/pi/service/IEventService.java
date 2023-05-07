@@ -1,7 +1,5 @@
 package arctic.example.pi.service;
-import arctic.example.pi.DTO.AssignToEventRequest;
-import arctic.example.pi.DTO.RemoveReservationRequest;
-import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
+import arctic.example.pi.DTO.*;
 import arctic.example.pi.entity.Evenement;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
@@ -26,15 +24,16 @@ public interface IEventService {
     void addEvent(Evenement event);
 
     void updateEvenement(Evenement event);
-
+    public AccueilStat pageAccueil();
     void removeEvenement (Long id);
 
     Optional< Evenement> retrieveEvent (Long numEvent);
 
     void removeReservation (RemoveReservationRequest removeReservationRequest);
 
-    void Reserver(Long numEvent, Long numUser) throws JsonProcessingException, IOException, WriterException, MessagingException;
+    void Reserver(ReservationRequest reservationRequest) throws JsonProcessingException, IOException, WriterException, MessagingException;
 
+    public int numberPlacesAvailablePerEvent(Long id);
 
     List<Sponsor> getSponsorNonDuEvent(Long id);
 
@@ -42,4 +41,6 @@ public interface IEventService {
 
     public void addSponsorFromEvent(AssignToEventRequest assignToEventRequest);
     public void removeSponsorFromEvent(RemoveSponsorFromEventRequest removeSponsorFromEventRequest);
+
+   public int countSoldOutEvents();
 }

@@ -36,8 +36,12 @@ public class Evenement  implements Serializable{
     private Double prix;
 
     private String fileName;
-    @ManyToMany(mappedBy = "event")
-    private Set<User> users;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "event_users",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> users;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "event_sponsor",

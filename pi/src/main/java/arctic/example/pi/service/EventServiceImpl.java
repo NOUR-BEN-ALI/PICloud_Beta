@@ -1,7 +1,5 @@
 package arctic.example.pi.service;
-import arctic.example.pi.DTO.AssignToEventRequest;
-import arctic.example.pi.DTO.RemoveReservationRequest;
-import arctic.example.pi.DTO.RemoveSponsorFromEventRequest;
+import arctic.example.pi.DTO.*;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.repository.SponsorRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -60,7 +58,7 @@ public class EventServiceImpl implements IEventService {
 
     @Override
     public void updateEvenement(Evenement event) {
-        Optional<Evenement> events = eventRepo.findById(event.getNumEvent());
+        /*Optional<Evenement> events = eventRepo.findById(event.getNumEvent());
         if (events.isPresent()) {
             events.get().setNomEvent(event.getNomEvent());
             events.get().setDescription(event.getDescription());
@@ -68,8 +66,9 @@ public class EventServiceImpl implements IEventService {
             events.get().setDateFin(event.getDateFin());
             events.get().setNbrPlace(event.getNbrPlace());
             events.get().setPrix(event.getPrix());
-            eventRepo.save(events.get());
-        }
+            events.get().setFileName(event.getFileName());*/
+            eventRepo.save(event);
+
     }
 
     public void removeEvenement(Long id) {
@@ -82,21 +81,28 @@ public class EventServiceImpl implements IEventService {
 
     @Override
     public void removeReservation(RemoveReservationRequest req) {
-        User u = userRepo.findById(req.getId()).get();
-        Evenement e = eventRepo.findById(req.getNumEvent()).get();
-        u.getEvent().remove(e);
-        e.getUsers().remove(u);
 
-        eventRepo.save(e);
+        Optional<Evenement> c = eventRepo.findById(req.getNumEvent());
+        if (c.isPresent()) {
+            for (Iterator<User> iterator = c.get().getUsers().iterator(); iterator.hasNext();) {
+                User p = iterator.next();
+                if (p.getId() == req.getId()) {
+                    iterator.remove();
+                }
+            }
+            eventRepo.save(c.get());
+        }
     }
 
 
     @Override
-    public void Reserver(Long numEvent, Long numUser) throws IOException, WriterException, MessagingException {
+    public void Reserver(ReservationRequest reservationRequest) throws IOException, WriterException, MessagingException {
 
         // Retrieve the user and event objects
-        User u = userRepo.findById(numUser).get();
-        Evenement e = eventRepo.findById(numEvent).get();
+        User u = userRepo.findById(reservationRequest
+                .getId()).get();
+
+        Evenement e = eventRepo.findById(reservationRequest.getNumEvent()).get();
 
 
         // Check if there are available places
@@ -105,7 +111,7 @@ public class EventServiceImpl implements IEventService {
             throw new RuntimeException("No available places for this event.");
         }else {
 
-            u.getEvent().add(e);
+           // u.getEvent().add(e);
             e.getUsers().add(u);
             eventRepo.save(e);
 
@@ -297,6 +303,12 @@ public class EventServiceImpl implements IEventService {
     }
 
     @Override
+    public int numberPlacesAvailablePerEvent(Long id) {
+         Evenement event = eventRepo.findById(id).get();
+            return event.getNbrPlace() - event.getUsers().size();
+      }
+
+    @Override
     public List<Sponsor> getSponsorNonDuEvent(Long id) {
         Optional<Evenement> c = eventRepo.findById(id);
         List <Sponsor> listQ = (List<Sponsor>) sponsorRepo.findAll();
@@ -359,7 +371,38 @@ public class EventServiceImpl implements IEventService {
 
     @Override
     public List<User> retrieveUsersByEvent(Long numEvent) {
-        return eventRepo.getUsersByEvent(numEvent);
+
+        Optional<Evenement> c = eventRepo.findById(numEvent);
+        List <User> listQ = (List<User>) userRepo.findAll();
+        List <User> listQF = c.get().getUsers();
+        listQ.removeAll(listQF);
+        if (Boolean.FALSE.equals(listQ.isEmpty())) {
+            return listQ;
+        }
+        return Collections.emptyList();
+    }
+
+    public int countActiveEvents() {
+        List<Evenement> activeEvents = eventRepo.getActiveEvents();
+        return activeEvents.size();
+    }
+
+    @Override
+    public int countSoldOutEvents() {
+            List<Evenement> events = (List<Evenement>) eventRepo.findAll();
+            return (int) events.stream()
+                    .filter(event -> event.getUsers().size() >= event.getNbrPlace())
+                    .count();
+        }
+
+
+    @Override
+    public AccueilStat pageAccueil() {
+        int count = countActiveEvents();
+        AccueilStat stats = new AccueilStat();
+        stats.setTotalEvent(eventRepo.count());
+        stats.setActivEvent(count);
+        return stats;
     }
 
 }

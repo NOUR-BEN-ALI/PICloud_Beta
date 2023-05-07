@@ -43,6 +43,7 @@ public class SponsorServiceImpl implements ISponsorService {
             spons.get().setDescription(sponsor.getDescription());
             spons.get().setDebutContract(sponsor.getDebutContract());
             spons.get().setFinContract(sponsor.getFinContract());
+            spons.get().setFileName(sponsor.getFileName());
             sponsorRepo.save(spons.get());
         }
     }

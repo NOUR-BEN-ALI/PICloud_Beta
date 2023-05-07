@@ -70,9 +70,42 @@ public class SponsorController {
         return Files.readAllBytes(imagePath);
     }
 
-    @PutMapping("/updateSponsor")
-    public void updateSponsort(@RequestBody Sponsor sponsor){
-         sponsorService.updateSponsor(sponsor);
+    @PutMapping("/updateSponsor/{numSponsor}")
+    public void updateSponsort(@RequestParam("file") MultipartFile file, @RequestParam("sponsor") String sponsor, @PathVariable Long numSponsor) throws IOException{
+        System.out.println("Save event.............");
+        Sponsor ev = new ObjectMapper().readValue(sponsor, Sponsor.class);
+        ev.setNumSponsor(numSponsor);
+        String originalFileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String newFileName = FilenameUtils.getBaseName(originalFileName) + "." + FilenameUtils.getExtension(originalFileName);
+
+        // Create a file object for the new image file
+        File newFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + newFileName);
+
+        // Delete the old image file if it exists
+        String oldFileName = ev.getFileName();
+        if (oldFileName != null) {
+            File oldFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + oldFileName);
+            FileUtils.deleteQuietly(oldFile);
+        }
+
+        // Write the new image file to the server
+        try {
+            FileUtils.writeByteArrayToFile(newFile, file.getBytes());
+        } catch (IOException e) {
+            throw new IOException("Failed to save file: " + e.getMessage());
+        }
+
+        // Set the new file name in the event object
+        ev.setFileName(newFileName);
+
+        // Update the event in the database
+        try {
+            sponsorService.updateSponsor(ev);
+            System.out.println(ev.getFileName());
+        } catch (Exception e) {
+            FileUtils.deleteQuietly(newFile);
+            throw new IOException("Failed to save spons: " + e.getMessage());
+        }
     }
 
     @DeleteMapping("/deleteSponsor/{numSponsor}")
@@ -99,5 +132,6 @@ public class SponsorController {
         sponsorService.exportSponsorsToExcel(response);
 
     }
+
 
 }
