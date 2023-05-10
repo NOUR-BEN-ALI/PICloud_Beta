@@ -1,7 +1,6 @@
 package arctic.example.pi.service;
 
 
-import arctic.example.pi.DTO.CountType;
 import arctic.example.pi.repository.TypeRecRepository;
 import arctic.example.pi.entity.TypeReclamation;
 import lombok.AllArgsConstructor;

@@ -16,7 +16,7 @@ public interface IEventService {
     List<Evenement> retrieveAllEvent();
 
     List <Evenement> retrieveActiveEvents();
-
+    public boolean hasReservation(Long eventId, Long id);
     List <Evenement> retrieveReservationsByUser(Long numUser);
 
     List<User> retrieveUsersByEvent(Long numEvent);

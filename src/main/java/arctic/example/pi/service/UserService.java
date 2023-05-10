@@ -5,7 +5,6 @@ import arctic.example.pi.entity.ERole;
 import arctic.example.pi.entity.User;
 
 import java.io.ByteArrayInputStream;
-import java.util.Date;
 import java.util.List;
 
 public interface UserService {

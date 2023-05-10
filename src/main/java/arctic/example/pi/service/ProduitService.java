@@ -1,6 +1,9 @@
 package arctic.example.pi.service;
 
-import arctic.example.pi.entity.*;
+import arctic.example.pi.entity.Categorie;
+import arctic.example.pi.entity.Etatprod;
+import arctic.example.pi.entity.Produit;
+import arctic.example.pi.entity.User;
 import arctic.example.pi.repository.CategorieRepository;
 import arctic.example.pi.repository.ProduitRepository;
 import arctic.example.pi.repository.UserRepository;
@@ -8,24 +11,15 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.qrcode.BitMatrix;
-import com.google.zxing.BarcodeFormat;
 
-import com.itextpdf.text.pdf.qrcode.ByteMatrix;
-import com.itextpdf.text.pdf.qrcode.QRCodeWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 //import com.google.zxing.client.j2se.MatrixToImageWriter;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.util.Base64;
 
 
-
-
-import java.io.ByteArrayOutputStream;
-import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;

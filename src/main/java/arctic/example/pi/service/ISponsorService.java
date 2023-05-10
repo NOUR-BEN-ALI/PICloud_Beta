@@ -5,11 +5,9 @@ package arctic.example.pi.service;
 
 
 import arctic.example.pi.entity.Sponsor;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.List;
 
 public interface ISponsorService {

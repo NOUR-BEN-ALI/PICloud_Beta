@@ -1,5 +1,4 @@
 package arctic.example.pi.controller;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import arctic.example.pi.DTO.*;
@@ -8,8 +7,6 @@ import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.entity.User;
 import arctic.example.pi.service.IEventService;
 import arctic.example.pi.service.ParticipantsPDFService;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
@@ -52,7 +49,7 @@ public class EventController {
 
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
         String newFileName = FilenameUtils.getBaseName(filename) + "." + FilenameUtils.getExtension(filename);
-        File serverFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + newFileName);
+        File serverFile = new File("C:/Users/Inesk/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + newFileName);
 
         try {
             FileUtils.writeByteArrayToFile(serverFile, file.getBytes());
@@ -72,6 +69,12 @@ public class EventController {
         }
     }
 
+    @GetMapping("/hasReservation/{numEvent}/{id}")
+    public boolean HasParticipation(@PathVariable Long numEvent, @PathVariable Long id){
+        return eventService.hasReservation(numEvent,id);
+    }
+
+
     @PutMapping("/updateEvent/{numEvent}")
     public  void updateEvent(@RequestParam("file") MultipartFile file, @RequestParam("event") String event,
                              @PathVariable("numEvent") Long numEvent)throws IOException{
@@ -88,12 +91,12 @@ public class EventController {
         String newFileName = FilenameUtils.getBaseName(originalFileName) + "." + FilenameUtils.getExtension(originalFileName);
 
         // Create a file object for the new image file
-        File newFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + newFileName);
+        File newFile = new File("C:/Users/moham/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + newFileName);
 
         // Delete the old image file if it exists
         String oldFileName = ev.getFileName();
         if (oldFileName != null) {
-            File oldFile = new File("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + oldFileName);
+            File oldFile = new File("C:/Users/Inesk/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + oldFileName);
             FileUtils.deleteQuietly(oldFile);
         }
 
@@ -147,7 +150,7 @@ public class EventController {
     @GetMapping(path="/ImgEvent/{numEvent}")
     public byte[] getPhoto(@PathVariable("numEvent") Long id) throws Exception{
         Evenement event   =eventService.retrieveEvent(id).get();
-        Path imagePath = Paths.get("C:/Users/Inesk/Desktop/PICloud_Beta/pi/src/main/webapp/Imagess/" + event.getFileName());
+        Path imagePath = Paths.get("C:/Users/Inesk/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + event.getFileName());
         return Files.readAllBytes(imagePath);
     }
 

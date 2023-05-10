@@ -4,20 +4,13 @@ package arctic.example.pi.service;
 import arctic.example.pi.entity.Donations;
 import arctic.example.pi.repository.DonationsRepostitory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 //import org.thymeleaf.TemplateEngine;
 //import org.thymeleaf.context.Context;
 import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
-import org.springframework.transaction.annotation.Transactional;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class DonationsService implements IDonationsService{

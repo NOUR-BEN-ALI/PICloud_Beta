@@ -3,7 +3,6 @@ package arctic.example.pi.service;
 import arctic.example.pi.entity.Blog;
 
 import javax.validation.constraints.Email;
-import java.awt.*;
 
 public interface IEmailService {
 

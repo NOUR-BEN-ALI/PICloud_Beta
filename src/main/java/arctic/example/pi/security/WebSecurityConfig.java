@@ -90,10 +90,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						).permitAll()
 				//.antMatchers(HttpMethod.POST, "/ajouter").authenticated()
 
-                .antMatchers("/**/api-auth/**","/**/user/**","/user/checkEmail","/user/allUsers","/api-auth/**","/user/**","/reclamation/**","/organisation/**","/role/**").permitAll()
+                .antMatchers("/**/api-auth/**","/**/user/**","/user/checkEmail",
+						"/user/allUsers","/api-auth/**","/user/**","/reclamation/**","/organisation/**","/role/**").permitAll()
 
 
-                .antMatchers("/**/api-auth/**","/**/user/**","/user/checkEmail","/user/allUsers","/organisation/**","/api-auth/**","/user/**","/role/**","**/organisation/**","**/organisation/ajouter"
+                .antMatchers("/**/api-auth/**","/**/user/**","/user/checkEmail","/user/allUsers",
+						"/organisation/**","/api-auth/**","/user/**","/role/**","**/organisation/**","/reclamation/**","/api/articles/**"
+						,"/api/events/**","/api/association/**","/api/blog/**","/api/categorie/**","/api/donations/**","/produit/**",
+						"/produit/**","/reclamation/**","/api/sms/**","/api/sponsors/**","/TypeRec/**", "/commandes/**","/paniers/**","/cookie/**"
                 		).permitAll()
 
 

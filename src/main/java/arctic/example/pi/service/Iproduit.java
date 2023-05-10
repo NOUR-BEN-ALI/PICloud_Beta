@@ -1,14 +1,9 @@
 package arctic.example.pi.service;
 
-import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Categorie;
 import arctic.example.pi.entity.Produit;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-import java.util.PropertyPermission;
 import java.util.Set;
 
 public interface Iproduit {

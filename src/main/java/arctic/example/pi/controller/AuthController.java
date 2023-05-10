@@ -4,6 +4,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
 
+import arctic.example.pi.entity.ConfirmationToken;
+import arctic.example.pi.entity.ERole;
+import arctic.example.pi.entity.Role;
+import arctic.example.pi.entity.User;
 import arctic.example.pi.entity.*;
 import arctic.example.pi.jwt.JwtUtils;
 import arctic.example.pi.payload.request.LoginRequest;
@@ -155,11 +159,11 @@ return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 			accountResponse.setResult(0);
 
 		} else {
-			if (strRoles.contains("agent")) {
-				Organisation organisation = organisationRepository.findById(signUpRequest.getOrganisationId())
-						.orElseThrow(() -> new RuntimeException("Organisation not found with id: " + signUpRequest.getOrganisationId()));
-				user.setOrganisation(organisation);
-			}
+			//if (strRoles.contains("agent")) {
+			//	Organisation organisation = organisationRepository.findById(signUpRequest.getOrganisationId())
+			//			.orElseThrow(() -> new RuntimeException("Organisation not found with id: " + signUpRequest.getOrganisationId()));
+			//	user.setOrganisation(organisation);
+			//}
 			//user.setStateuser(false);
 			user.setRoles(roles);
 			userRepository.save(user);
@@ -172,7 +176,7 @@ return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
 			mailMessage.setFrom("mohamedaziz.benzarti@esprit.tn");
 			mailMessage.setTo(user.getEmail());
 			mailMessage.setText("To confirm your account, please click here : "
-					+"http://localhost:8090/api-auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+					+"http://localhost:8080/api-auth/confirm-account?token="+confirmationToken.getConfirmationToken());
 
 			mailMessage.setSubject("Complete Registration!");
 			javaMailSender.send(mailMessage);

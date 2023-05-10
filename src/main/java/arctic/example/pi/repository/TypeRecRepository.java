@@ -1,5 +1,4 @@
 package arctic.example.pi.repository;
-import arctic.example.pi.entity.MaxRecParType;
 import arctic.example.pi.entity.TypeReclamation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

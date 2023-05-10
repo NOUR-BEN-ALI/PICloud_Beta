@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.io.ByteArrayInputStream;
-import java.util.Date;
 import java.util.List;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;

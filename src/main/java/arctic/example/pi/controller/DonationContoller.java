@@ -3,7 +3,6 @@ package arctic.example.pi.controller;
 
 import arctic.example.pi.entity.Associations;
 import arctic.example.pi.entity.Donations;
-import arctic.example.pi.entity.Role;
 import arctic.example.pi.repository.AssociationRepository;
 import arctic.example.pi.repository.DonationsRepostitory;
 import arctic.example.pi.service.DonationsService;
