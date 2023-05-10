@@ -6,12 +6,9 @@ import arctic.example.pi.entity.User;
 import arctic.example.pi.repository.OrganisationRepository;
 import arctic.example.pi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class OrganisationServiceImp implements OrganisationService {

@@ -1,114 +1,137 @@
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\OrganisationController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ExcelExportSponsors.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\TwilioService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\TypeRecController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\AssignToEventRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ITypeRec.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\BlogServiceImp.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ConfirmationToken.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\Icategorie.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\userFunction\AccountResponse.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\RemoveReservationRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\BlogService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\CountType.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\JwtResponse.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ArticlesServiceImp.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\AuthController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Status.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IAssociationService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\CountColor.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\EventController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\PiApplication.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IReclamation.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\SmsController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Categorie.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Produit.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IDonationsService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Associations.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Donations.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\WebSecurityConfig.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\JwtLogin.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\User.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\JwtUtils.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\Iproduit.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ConfirmationTokenRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\UserService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\UserController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\RoleController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ReclamationService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\RemoveSponsorFromEventRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ReclamationComparator.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TypeOrganisation.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ProduitRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\SponsorController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ReclamationRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Role.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\EventRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\EventServiceImpl.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\OrganisationService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\AssociationsController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\OrganisationRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ReclamationController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\UserDetailsServiceImpl.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ProduitController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\DonationContoller.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\CategorieRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ParticipantsPDFService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\SmsRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Evenement.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\StatistiquesDTO.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\EmailService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\LoginResponse.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\BlogCntroller.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\AssociationRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\ReservationRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\AccueilStat.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\AssociationsService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\ResponseMessage.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\UserServiceImp.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\OrganisationServiceImp.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\DonationsService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IEventService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\SponsorRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TwilioConfiguration.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TypeReclamation.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IEmailService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\QRCodeController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\UserDetailsImpl.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\RoleRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\request\LoginRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\CategorieService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Blog.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Organisation.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ProduitService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Sponsor.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\QrCodeService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\SponsorServiceImpl.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\BlogRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Articles.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Etatprod.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\AuthEntryPointJwt.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ISponsorService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\DonationsRepostitory.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\UserRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\MaxRecParType.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\AuthTokenFilter.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\ImageUserResponse.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\request\SignupRequest.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ERole.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\RoleServiceImp.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Email.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\TypeRecRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ArticlesController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\TypeRecService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ArticlesRepository.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ArticlesService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Reclamation.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\DonationExcelController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Statuarticle.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Typeblog.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\TokenDto.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\CategorieController.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\RoleService.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\MessageResponse.java
-C:\Users\Inesk\Desktop\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\QRCodeGenerator.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\JwtLogin.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IDonationsService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IEmailService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\CategorieController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\EventRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\UserService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ERole.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\TokenDto.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\BlogCntroller.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\UserRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\RoleController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\OrganisationServiceImp.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ConfirmationTokenRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\AssociationsService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\Icategorie.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Statuarticle.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\RoleService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\RoleRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ArticlesService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\KonnectPaymentRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\CommandeRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\LoginResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\OrganisationRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\PanierService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\Iproduit.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ArticlesController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\TypeRecRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\userFunction\AccountResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\AuthTokenFilter.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\JwtResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\WebSecurityConfig.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\UserDetailsImpl.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\PayPalService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\SponsorServiceImpl.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\TypeRecService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\SponsorController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\request\SignupRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\DonationsRepostitory.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\AssociationsController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\PanierController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\CommandeService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\CookieController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Panier.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\AssociationRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ITypeRec.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\OrganisationController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ReclamationController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\PanierDTO.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\StatistiquesDTO.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Role.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\User.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\QRCodeController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\RemoveSponsorFromEventRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\CategorieService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\ProduitController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Status.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\security\UserDetailsServiceImpl.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Sponsor.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IAssociationService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\QRCodeGenerator.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\EmailService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Order.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\SendMoneyRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Categorie.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\UserController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Email.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\MaxRecParType.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\PanierPdfService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IReclamation.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\UserServiceImp.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\BlockCypherController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ConfirmationToken.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\KonnectController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ISponsorService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\EventController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\AssignToEventRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\DonationExcelController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ProduitService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\AuthEntryPointJwt.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\SmsRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\RoleServiceImp.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\CommandeController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\QrCodeService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\OrganisationService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\KonnectPaymentStatus.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\DonationContoller.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ParticipantsPDFService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\CountType.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ArticlesRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Commande.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\SmsController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Evenement.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\AccueilStat.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\RemoveReservationRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ExcelExportSponsors.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\ReclamationComparator.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ProduitRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\MessageResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\CategorieRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\KonnectGatewayService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\SponsorRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\PanierRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ArticlesServiceImp.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\DonationsService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TypeOrganisation.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\KonnectPaymentResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Etatprod.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TwilioConfiguration.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\TwilioService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Associations.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\CountColor.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\CommandeDTO.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Articles.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\PiApplication.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\ReclamationRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\LoggingAspect.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\jwt\JwtUtils.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Blog.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\AuthController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Organisation.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Produit.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\TypeRecController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\ImageUserResponse.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\request\LoginRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\controller\PaymentController.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\payload\response\ResponseMessage.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\TypeReclamation.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\repository\BlogRepository.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\BlogServiceImp.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Reclamation.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\BlogService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\EventServiceImpl.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\ReclamationService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\DTO\ReservationRequest.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Typeblog.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\service\IEventService.java
+C:\Users\Z4RGA\Documents\PI\Final Back w front\PIBACKFINAL\PIBACKFINAL\PICloud_Beta\src\main\java\arctic\example\pi\entity\Donations.java

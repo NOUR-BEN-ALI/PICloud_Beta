@@ -1,6 +1,5 @@
 package arctic.example.pi.service;
 
-import arctic.example.pi.DTO.CountType;
 import arctic.example.pi.entity.TypeReclamation;
 
 import java.util.Date;

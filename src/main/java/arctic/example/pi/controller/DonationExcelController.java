@@ -1,7 +1,4 @@
 package arctic.example.pi.controller;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import arctic.example.pi.entity.Donations;

@@ -2,7 +2,6 @@ package arctic.example.pi.service;
 import arctic.example.pi.DTO.*;
 import arctic.example.pi.entity.Sponsor;
 import arctic.example.pi.repository.SponsorRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.zxing.WriterException;
 import org.springframework.core.io.ByteArrayResource;
@@ -365,7 +364,20 @@ public class EventServiceImpl implements IEventService {
         }
     }
 
-
+    @Override
+    public boolean hasReservation(Long eventId, Long id) {
+        Optional<Evenement> optionalEvent = eventRepo.findById(eventId);
+        Optional<User> optionalUser = userRepo.findById(id);
+        if (optionalEvent.isPresent() && optionalUser.isPresent()) {
+            Evenement event = optionalEvent.get();
+            User user = optionalUser.get();
+            List<User> users = event.getUsers();
+            if (users != null && users.contains(user)) {
+                return true;
+            }
+        }
+        return false;
+    }
     @Override
     public List<Evenement> retrieveReservationsByUser(Long numUser) {
         return eventRepo.getEventsByUser(numUser);

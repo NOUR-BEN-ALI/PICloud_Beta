@@ -1,8 +1,6 @@
 package arctic.example.pi.controller;
 
 
-import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Categorie;
 import arctic.example.pi.entity.Produit;
 import arctic.example.pi.repository.CategorieRepository;
 import arctic.example.pi.repository.ProduitRepository;
@@ -13,18 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayInputStream;
-import java.net.URI;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/produit")
 public class ProduitController {

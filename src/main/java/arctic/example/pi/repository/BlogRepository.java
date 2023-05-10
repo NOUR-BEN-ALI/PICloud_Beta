@@ -1,8 +1,6 @@
 package arctic.example.pi.repository;
 
-import arctic.example.pi.entity.Articles;
 import arctic.example.pi.entity.Blog;
-import arctic.example.pi.entity.Reclamation;
 import arctic.example.pi.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

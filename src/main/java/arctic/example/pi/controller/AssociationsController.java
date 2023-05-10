@@ -1,7 +1,6 @@
 package arctic.example.pi.controller;
 
 import arctic.example.pi.entity.Associations;
-import arctic.example.pi.entity.Role;
 import arctic.example.pi.repository.AssociationRepository;
 import arctic.example.pi.service.AssociationsService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,8 +8,6 @@ import com.lowagie.text.DocumentException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,9 +18,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -91,7 +85,7 @@ public class AssociationsController {
 
        String filename = StringUtils.cleanPath(file.getOriginalFilename());
        String newFileName = FilenameUtils.getBaseName(filename) + "." + FilenameUtils.getExtension(filename);
-       File serverFile = new File("C:/Users/user/Desktop/integration/PICloud_Beta/src/main/webApp/Imagess/" + newFileName);
+       File serverFile = new File("C:/Users/Inesk/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + newFileName);
 
        try {
            FileUtils.writeByteArrayToFile(serverFile, file.getBytes());
@@ -114,7 +108,7 @@ public class AssociationsController {
     @GetMapping(path="/ImgAsso/{id}")
     public byte[] getPhoto(@PathVariable("id") Long id) throws Exception{
         Associations sponsor   = associationRepository.findById(id).get();
-        Path imagePath = Paths.get("C:/Users/user/Desktop/integration/PICloud_Beta/src/main/webApp/Imagess/" + sponsor.getImageFileName());
+        Path imagePath = Paths.get("C:/Users/Inesk/Desktop/PIBACKFINAL/PICloud_Beta/src/main/webApp/Imagess" + sponsor.getImageFileName());
         return Files.readAllBytes(imagePath);
     }
 

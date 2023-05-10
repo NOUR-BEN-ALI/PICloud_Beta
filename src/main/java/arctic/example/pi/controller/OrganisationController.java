@@ -1,23 +1,13 @@
 package arctic.example.pi.controller;
 import arctic.example.pi.entity.Organisation;
 import arctic.example.pi.entity.TypeOrganisation;
-import arctic.example.pi.entity.User;
 import arctic.example.pi.repository.UserRepository;
 import arctic.example.pi.service.OrganisationService;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
+
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 @RestController

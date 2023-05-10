@@ -1,12 +1,9 @@
 package arctic.example.pi.controller;
 
 import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Reclamation;
-import arctic.example.pi.entity.StatistiquesDTO;
 import arctic.example.pi.entity.Statuarticle;
 import arctic.example.pi.repository.ArticlesRepository;
 import arctic.example.pi.service.ArticlesService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;

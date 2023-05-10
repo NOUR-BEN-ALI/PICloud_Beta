@@ -1,6 +1,5 @@
 package arctic.example.pi.service;
 
-import arctic.example.pi.entity.Articles;
 import arctic.example.pi.entity.Blog;
 import arctic.example.pi.entity.User;
 import arctic.example.pi.repository.BlogRepository;

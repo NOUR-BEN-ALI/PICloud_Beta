@@ -2,10 +2,7 @@ package arctic.example.pi.service;
 
 
 import arctic.example.pi.entity.Articles;
-import arctic.example.pi.entity.Reclamation;
 import arctic.example.pi.entity.Statuarticle;
-import org.springframework.social.connect.ConnectionFactory;
-import org.springframework.social.facebook.api.Facebook;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;

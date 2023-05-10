@@ -1,5 +1,9 @@
 package arctic.example.pi.service;
 
+import arctic.example.pi.entity.Articles;
+import arctic.example.pi.entity.Blog;
+import arctic.example.pi.entity.Statuarticle;
+import arctic.example.pi.entity.User;
 import arctic.example.pi.entity.*;
 import arctic.example.pi.repository.ArticlesRepository;
 import arctic.example.pi.repository.BlogRepository;
@@ -10,12 +14,8 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.social.ResourceNotFoundException;
-import org.springframework.social.connect.ConnectionFactory;
-import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.stereotype.Service;
 
 

@@ -1,5 +1,4 @@
 package arctic.example.pi.service;
-import arctic.example.pi.entity.Evenement;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import arctic.example.pi.entity.Sponsor;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
-import java.util.Set;
 
 public class ExcelExportSponsors {
 

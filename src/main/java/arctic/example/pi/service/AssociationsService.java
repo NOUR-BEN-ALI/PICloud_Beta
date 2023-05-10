@@ -5,26 +5,19 @@ import arctic.example.pi.entity.Donations;
 import arctic.example.pi.repository.AssociationRepository;
 import arctic.example.pi.repository.DonationsRepostitory;
 import com.lowagie.text.*;
-import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lowagie.text.FontFactory;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
-import com.lowagie.text.pdf.PdfWriter;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.http.HttpServletResponse;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
